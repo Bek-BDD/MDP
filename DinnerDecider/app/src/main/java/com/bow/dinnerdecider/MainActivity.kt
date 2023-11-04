@@ -1,31 +1,34 @@
 package com.bow.dinnerdecider
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bow.dinnerdecider.databinding.MainPageBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding : MainPageBinding
     private val foodOptions = mutableListOf<String>("Shero", "Meser", "Kitfo", "misto", "mahberawi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_page)
+        binding=MainPageBinding.inflate(layoutInflater);
+        var view= binding.root;
+        setContentView(view)
 
 
-        val btnAddFood : Button = findViewById(R.id.btn_addFood)
-        val btnDecide : Button = findViewById(R.id.btn_decideFood)
-        val edtFood : EditText = findViewById(R.id.edit_food)
-        val txtDisplay : TextView = findViewById(R.id.txtChosenFood)
+        val addFoodBtn =binding.addFoodBtn;
+        val decideBtn =binding.decideBtn;
+        val customOrder = binding.customOrder;
+        val display = binding.display
 
-        btnDecide.setOnClickListener {
-            txtDisplay.text = selectFood(foodOptions);
+        decideBtn.setOnClickListener {
+            display.text = selectFood(foodOptions);
         }
 
-        btnAddFood.setOnClickListener{
-            addFood(edtFood.text.toString())
-            edtFood.text.clear()
+        addFoodBtn.setOnClickListener{
+            addFood(customOrder.text.toString())
+            display.text = customOrder.text;
+            customOrder.text.clear()
+
         }
     }
 
