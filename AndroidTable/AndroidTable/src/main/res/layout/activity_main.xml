@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:id="@+id/parentTable"
+    tools:context=".MainActivity">
+
+
+    <TableRow android:padding="8dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Android Generations"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#0B6671"
+            android:textSize="30sp" />
+    </TableRow>
+    <TableRow>
+        <Space
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            />
+    </TableRow>
+    <TableRow >
+        <EditText
+            android:id="@+id/version"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="@string/version"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/code"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/addBtn"
+            android:onClick="onAddBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:background="@drawable/roundbuttons"
+            android:backgroundTint="#0B6671"
+            android:text="add"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_margin="10dp"
+            />
+    </TableRow>
+    <TableRow>
+        <Space
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            />
+    </TableRow>
+
+    <TableRow android:background="@drawable/borders">
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/version"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/code"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </TableRow>
+    <TableRow >
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/v9"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pie"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </TableRow>
+    <TableRow >
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/v8"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/oreo"
+            android:textSize="20sp"
+            android:textColor="#0B6671"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </TableRow>
+</TableLayout>
