@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">LoginPage</string>
+    <string name="lable">Welcome to my world</string>
+    <string name="login">Login</string>
+    <string name="email">Email address *</string>
+    <string name="emailAdd">Email</string>
+    <string name="password">Password *</string>
+    <string name="forgotP">Forgot password?</string>
+    <string name="username">username</string>
+    <string name="passkey">password</string>
+    <string name="noAccount">Don\'t have an account?</string>
+    <string name="createAcc">Create a new account</string>
+    <string name="signupLable">Create your account</string>
+    <string name="fname">First name</string>
+    <string name="lname">Last name</string>
+    <string name="reqLable">* required fields</string>
+    <string name="create">Create Account</string>
+    <string name="alreadymem">Already a  member?</string>
+    <string name="signup">Signup</string>
+    <string name="wellcome">wellcome : </string>
+    <string name="price1">$22.45</string>
+    <string name="price2">$12.89</string>
+    <string name="price3">$25.76</string>
+    <string name="price4">$2.40</string>
+    <string name="price5">$89.34</string>
+    <string name="price6">$20.01</string>
+    <string name="buy">buy</string>
+    <string name="dsc1">Lorem ipsum dolor sit amet, consectetur  </string>
+    <string name="shopLable">Pick your Ride</string>
+    <string name="sub">Recover your Email</string>
+    <string name="body">Your Registered Email is:</string>
+</resources>
