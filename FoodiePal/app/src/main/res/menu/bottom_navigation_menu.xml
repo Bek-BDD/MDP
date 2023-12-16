@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_recipes"
+        android:title="@string/recipes" />
+    <item
+        android:id="@+id/navigation_meal_planner"
+        android:title="@string/meal_planner" />
+    <item
+        android:id="@+id/navigation_blog"
+        android:title="@string/blog" />
+</menu>

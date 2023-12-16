@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_recipe_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/recipe_name_hint"
+        android:textColor="@color/primary"/>
+
+    <EditText
+        android:id="@+id/et_cooking_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cooking_time_hint"
+        android:inputType="number"
+        android:textColor="@color/primary"/>
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:scrollbarSize="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:numStars="5"
+        android:progressBackgroundTint="@color/secondary"
+        android:progressBackgroundTintMode="multiply"
+        android:stepSize="0.5" />
+
+    <!-- You can add more fields for the image and other properties -->
+
+</LinearLayout>
