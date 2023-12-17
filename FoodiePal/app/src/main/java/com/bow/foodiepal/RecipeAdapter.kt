@@ -17,6 +17,7 @@ class RecipeAdapter(private val recipes: List<Recipe>) :
         val cookingTimeTextView: TextView = view.findViewById(R.id.recipe_cooking_time)
         val ratingBar: RatingBar = view.findViewById(R.id.recipe_rating)
         val imageView: ImageView = view.findViewById(R.id.recipe_image)
+        val description :TextView=view.findViewById(R.id.et_recipe)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,8 +29,9 @@ class RecipeAdapter(private val recipes: List<Recipe>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val recipe = recipes[position]
-        holder.nameTextView.text = recipe.name
+        holder.nameTextView.text ="Name: ${recipe.name}"
         holder.cookingTimeTextView.text = recipe.cookingTime
+        holder.description.text="RECIPE: ${recipe.recipe}"
         holder.ratingBar.rating = recipe.rating
         Glide.with(holder.imageView.context).load(recipe.image).into(holder.imageView)
     }

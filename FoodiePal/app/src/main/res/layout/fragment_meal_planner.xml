@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipesFragment">
+    tools:context=".MealPlannerFragment">
 
-
+    <!-- RecyclerView to display the meal plans -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recipes_recycler_view"
+        android:id="@+id/meal_planner_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:padding="16dp"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/item_recipe" />
+        android:layout_above="@id/addMealPlanButton"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="3dp"
+        tools:listitem="@layout/item_meal_planner" />
 
+    <!-- FloatingActionButton to add new meal plans -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_recipe_fab"
+        android:id="@+id/addMealPlanButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/fab_margin"
@@ -28,6 +31,8 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/round_boarder"
         android:backgroundTint="@color/white"
-        android:contentDescription="@string/add_recipe" />
+        android:contentDescription="@string/add_recipe"
+        android:focusable="true"
+        android:clickable="true"/>
 
 </RelativeLayout>

@@ -1,0 +1,11 @@
+package com.bow.foodiepal
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class BlogActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.item_blog)
+    }
+}

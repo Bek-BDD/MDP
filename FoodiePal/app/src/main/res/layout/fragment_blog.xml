@@ -8,14 +8,14 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recipes_recycler_view"
+        android:id="@+id/blog_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:padding="16dp"
         android:scrollbars="vertical"
-        tools:listitem="@layout/item_recipe" />
+        tools:listitem="@layout/item_blog" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_recipe_fab"
