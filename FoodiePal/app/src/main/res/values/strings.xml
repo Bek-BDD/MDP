@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">FoodiePal</string>
+    <string name="recipes">Recipe</string>
+    <string name="meal_planner">Meal Planner</string>
+    <string name="blog">Blog</string>
+    <string name="add_recipe">Add recipe</string>
+    <string name="recipe_name_hint">Recipe name</string>
+    <string name="cooking_time_hint">Cooking time</string>
+    <string name="save">save</string>
+    <string name="recipe_name_required">recipe name can not be null</string>
+    <string name="add_new_recipe">add new recipe</string>
+    <string name="cancel">cancel</string>
+    <string name="addmeal">Add/View Meal</string>
+    <string name="add_new_meal_plan">add meal</string>
+    <string name="meal_plan_item">Meal plan item</string>
+    <string name="meal_type">meal Type</string>
+    <string name="lable">Welcome to my world</string>
+    <string name="login">Login</string>
+    <string name="email">Email address *</string>
+    <string name="emailAdd">Email</string>
+    <string name="password">Password *</string>
+    <string name="forgotP">Forgot password?</string>
+    <string name="username">username</string>
+    <string name="passkey">password</string>
+    <string name="noAccount">Don\'t have an account?</string>
+    <string name="createAcc">Create a new account</string>
+    <string name="author">Author</string>
+    <string name="postedTime">12/03/23</string>
+    <string name="post1">What is a simple paragraph about food? Essay On Food (in English) for Classes 1, 2 and 3: 10 Lines ...
+Food is the substance we eat every day for energy and strength. </string>
+    <string name="post2">The quick brown fox jumps over a lazy dog is the most famous pangram in English, This famous sentence contains every letter of the alphabet, and is used by companies worldwide to demonstrate font types.</string>
+    <string name="name">Bereket Daniel Dentamo</string>
+    <string name="occupation">Software Engineer</string>
+    <string name="slogan">#God_Provides</string>
+
+</resources>
