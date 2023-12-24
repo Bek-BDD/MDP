@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.bow.dinnerdecider"
+    namespace = "com.bow.quizapplication"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.bow.dinnerdecider"
+        applicationId = "com.bow.quizapplication"
         minSdk = 21
         targetSdk = 33
         versionCode = 1
@@ -33,9 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding=true
+    buildFeatures{
+        viewBinding=true;
     }
+
 }
 
 dependencies {

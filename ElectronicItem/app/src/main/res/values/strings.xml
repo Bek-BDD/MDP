@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ElectronicItem</string>
+    <string name="desc">Product Description</string>
+    <string name="price">$999.99</string>
+    <string name="prodName">Product Name</string>
+    <string name="legend_text">ሸቀጣ ሸቀጥ</string>
+</resources>
