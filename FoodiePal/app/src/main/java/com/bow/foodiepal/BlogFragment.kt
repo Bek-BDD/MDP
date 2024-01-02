@@ -1,5 +1,6 @@
 package com.bow.foodiepal
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +14,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bow.foodiepal.Stores.BlogStore
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class BlogFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: BlogAdapter
+    private lateinit var blogSharedPreferences: BlogStore
     private var blogs = mutableListOf<Blog>()
     private lateinit var viewModel: BlogViewModel
 
@@ -30,6 +33,7 @@ class BlogFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_blog, container, false)
         recyclerView = view.findViewById(R.id.blog_recycler_view)
+        blogSharedPreferences = BlogStore(requireContext())
         adapter = BlogAdapter(blogs)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -53,7 +57,8 @@ class BlogFragment : Fragment() {
         val recyclerView = view?.findViewById<RecyclerView>(R.id.blog_recycler_view)
         recyclerView?.layoutManager = LinearLayoutManager(context)
         viewModel.getBlogs().observe(viewLifecycleOwner, Observer { items ->
-            recyclerView?.adapter = BlogAdapter(items)
+            blogSharedPreferences.savePost(items.toMutableList())
+            recyclerView?.adapter = BlogAdapter(blogSharedPreferences.getPosts())
         })
     }
 }

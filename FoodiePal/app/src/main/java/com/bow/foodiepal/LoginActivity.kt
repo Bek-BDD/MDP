@@ -6,33 +6,39 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        sharedPreferences = getSharedPreferences("FoodiePalPrefs", Context.MODE_PRIVATE)
 
-        val buttonLogin = findViewById<Button>(R.id.loginBtn)
-        val editTextUsername = findViewById<EditText>(R.id.emailStr)
-        val editTextPassword = findViewById<EditText>(R.id.passStr)
+        sharedPreferences = getSharedPreferences("USER_CREDENTIALS", MODE_PRIVATE)
+        val savedUsername = sharedPreferences.getString("USERNAME", null)
+        val savedPassword = sharedPreferences.getString("PASSWORD", null)
 
-        buttonLogin.setOnClickListener {
-            val username = editTextUsername.text.toString()
-            val password = editTextPassword.text.toString()
-            registerUser(username,password)
-            if (validate(username, password)) {
+        val username = findViewById<EditText>(R.id.emailStr)
+        val password = findViewById<EditText>(R.id.passStr)
+        val loginButton = findViewById<Button>(R.id.loginBtn)
+        val signUpText = findViewById<TextView>(R.id.createBtn)
 
+        loginButton.setOnClickListener {
+            if (username.text.toString() == savedUsername && password.text.toString() == savedPassword) {
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                finish()
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
             } else {
-
-                Toast.makeText(this@LoginActivity, "Authentication failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        signUpText.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
         }
     }
 

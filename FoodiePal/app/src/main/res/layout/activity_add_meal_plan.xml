@@ -17,21 +17,31 @@
             android:background="@drawable/round_boarder"
             android:backgroundTint="@color/secondary"
             android:contentDescription="@string/add_recipe" />
+    <TextView
+        android:id="@+id/dateselected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Date"
+        android:textStyle="bold|italic"
+        android:textSize="18sp"
+        android:textColorHint="@color/primary"
+        android:textColor="@color/primary"/>
 
-    <EditText
-        android:id="@+id/mealtype"
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/meal_type"
-        android:textColorHint="@color/primary"
-        android:inputType="number"
-        android:textColor="@color/primary"/>
+        android:textColor="@color/primary"
+        android:padding="10dp"
+        android:textSize="12sp"
+
+        />
+
     <EditText
         android:id="@+id/recipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/recipes"
-        android:inputType="number"
         android:textColor="@color/primary"
         android:textColorHint="@color/primary"/>
 

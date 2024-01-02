@@ -14,10 +14,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bow.foodiepal.Stores.RecipeStore
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RecipesFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
+    private lateinit var recipeSharedPreferences: RecipeStore
     private lateinit var adapter: RecipeAdapter
     private var recipesList = mutableListOf<Recipe>()
     private lateinit var viewModel: RecipeViewModel
@@ -29,11 +31,13 @@ class RecipesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_recipe, container, false)
+        recipeSharedPreferences = RecipeStore(requireContext())
         recyclerView = view.findViewById(R.id.recipes_recycler_view)
         adapter = RecipeAdapter(recipesList)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
         viewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
+
 
         val fab: FloatingActionButton = view.findViewById(R.id.add_recipe_fab)
         fab.setOnClickListener {
@@ -64,7 +68,7 @@ class RecipesFragment : Fragment() {
             val recipeName = dialogView.findViewById<EditText>(R.id.et_recipe_name).text.toString()
             val cookingTime = dialogView.findViewById<EditText>(R.id.et_cooking_time).text.toString()
             val recipe = dialogView.findViewById<EditText>(R.id.et_recipe).text.toString()
-            var rating=0f
+            var rating=3.5f
 
 
             ratingBar.onRatingBarChangeListener = RatingBar.OnRatingBarChangeListener { _, ratingbar, _ ->
@@ -73,9 +77,11 @@ class RecipesFragment : Fragment() {
 
             if (recipeName.isNotBlank()) {
 
-                viewModel.addRecipe(Recipe(recipesList.size, recipeName, R.drawable.food, cookingTime,recipe, rating))
-
+                viewModel.addRecipe(Recipe(recipesList.size, recipeName, R.drawable.food,
+                    "$cookingTime min",recipe, rating))
+                Toast.makeText(context, "added",Toast.LENGTH_LONG).show()
                 dialog.dismiss()
+                loadRecipes()
             } else {
 
                 Toast.makeText(context, R.string.recipe_name_required, Toast.LENGTH_SHORT).show()
@@ -88,8 +94,11 @@ class RecipesFragment : Fragment() {
     private fun loadRecipes() {
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recipes_recycler_view)
         recyclerView?.layoutManager = LinearLayoutManager(context)
+
+
         viewModel.getRecipes().observe(viewLifecycleOwner, Observer { items ->
-            recyclerView?.adapter = RecipeAdapter(items)
+            recipeSharedPreferences.saveRecipes(items.toMutableList())
+            recyclerView?.adapter = RecipeAdapter(recipeSharedPreferences.getRecipes())
         })
     }
 }
