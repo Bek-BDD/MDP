@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TableLayout
+        android:id="@+id/parentTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+       >
+
+        <TableRow
+            android:id="@+id/plant"
+            android:background="@drawable/bottom_border">
+            <TextView
+                android:id="@+id/textViewPlantName"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center_horizontal"
+                android:hint="Plant name"
+                android:textColor="@color/secondary"
+                android:textStyle="bold"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textViewPlantType"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="Plant type"
+                android:gravity="center_horizontal"
+                android:textColor="@color/secondary"
+                android:textStyle="italic"
+                android:textSize="25sp" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
