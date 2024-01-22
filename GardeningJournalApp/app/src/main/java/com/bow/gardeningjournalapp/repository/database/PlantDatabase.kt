@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.bow.gardeningjournalapp.entity.Plant
 import com.bow.gardeningjournalapp.repository.dao.PlantDao
 
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
+@Database(entities = [Plant::class], version = 2, exportSchema = false)
 abstract class PlantDatabase : RoomDatabase() {
     abstract fun plantDao(): PlantDao
 
@@ -21,7 +21,8 @@ abstract class PlantDatabase : RoomDatabase() {
                     context.applicationContext,
                     PlantDatabase::class.java,
                     "plant_database"
-                ).build()
+                ).fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }

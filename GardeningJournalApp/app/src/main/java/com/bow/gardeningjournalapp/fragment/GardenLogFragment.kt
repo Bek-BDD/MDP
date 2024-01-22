@@ -95,17 +95,17 @@ class GardenLogFragment : Fragment() {
             AlertDialog.Builder(it)
                 .setView(dialogView)
                 .setView(dialogView)
-                .setTitle("Update Plant")
-                .setPositiveButton("Update", null)
+                .setTitle("Add Plant")
+                .setPositiveButton("Add", null)
                 .setNegativeButton("Cancel", null)
         }
         val dialog = builder?.show()
         dialog?.getButton(AlertDialog.BUTTON_POSITIVE)?.setOnClickListener {
 
-            val plantedDate = dialogView.findViewById<TextView>(R.id.viewTextDate).toString()
-            val plantName = dialogView.findViewById<EditText>(R.id.editTextName).toString()
-            val plantType = dialogView.findViewById<EditText>(R.id.editTextType).toString()
-            val w_Freq = dialogView.findViewById<EditText>(R.id.editTextFreq).toString()
+            val plantedDate = dialogView.findViewById<TextView>(R.id.viewTextDate).text.toString()
+            val plantName = dialogView.findViewById<EditText>(R.id.editTextName).text.toString()
+            val plantType = dialogView.findViewById<EditText>(R.id.editTextType).text.toString()
+            val w_Freq = dialogView.findViewById<EditText>(R.id.editTextFreq).text.toString()
             println(w_Freq)
 
             if (plantName.isNotBlank()|| plantType.isNotBlank() || plantedDate.isNotBlank()|| w_Freq.isNotBlank()) {

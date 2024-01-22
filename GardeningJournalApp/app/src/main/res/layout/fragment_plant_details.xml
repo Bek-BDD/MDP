@@ -173,7 +173,7 @@
         android:background="@drawable/round_boarder"
         android:backgroundTint="@color/primary"
         android:gravity="center"
-        android:text="Home"
+        android:text="Garden Log"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp"
